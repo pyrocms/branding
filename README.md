@@ -21,4 +21,4 @@ gulp
 
 You're done!
 
-![](http://branding.gif)
+![](https://raw.githubusercontent.com/pyrocms/branding/master/demo.gif)
