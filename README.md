@@ -20,3 +20,5 @@ gulp
 - Check generated files at `assets` folder
 
 You're done!
+
+![](http://branding.gif)

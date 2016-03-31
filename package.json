@@ -1,0 +1,32 @@
+{
+  "name": "pyrocms-branding",
+  "version": "0.1.0",
+  "homepage": "http://pyrocms.com/",
+  "description": "Logos and other branding assets for PyroCMS.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license" : "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pyrocms/branding"
+  },
+  "keywords": [
+    "pyrocms",
+    "laravel"
+  ],
+  "author": "Adnan M.Sagar, PhD. <adnan@websemantics.io>",
+  "bugs": {
+    "url": "https://github.com/pyrocms/branding/issues"
+  },
+  "devDependencies": {
+      "gulp": "*",
+      "gulp-svg2png": "*",
+      "gulp-favicons": "*",
+      "gulp-svg-sprite": "*",
+      "gulp-nunjucks-render": "*",
+      "gulp-svgmin": "*",
+      "gulp-rename": "*",
+      "gulp-print": "*"
+  }
+}
