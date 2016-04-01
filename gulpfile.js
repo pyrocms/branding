@@ -34,7 +34,7 @@ var white_fill     = '#ffffff';
 var brand_fill     = '#61269E';
 
 /* Preview index.html */
-var files          = {svg:[],png:[]};
+var html_data      = {svg:[],png:[],gh_pages: 'https://raw.githubusercontent.com/pyrocms/branding/gh-pages'};
 
 /*
 	List of all required PNG files and sizes for both, logo and logo+text
@@ -172,7 +172,7 @@ function svg(filename, data)
     data['viewbox_width']    = data['width'] + data['width'] * (1-scale);
     data['viewbox_height']   = data['height'] + data['height'] * (1-scale);
 
-    /* Append file */ files.svg.push(filename);
+    /* Append file */ html_data.svg.push(filename);
 
   	return gulp.src(svg_template)
 		.pipe(template({ext:'.svg', data: data}))
@@ -194,7 +194,7 @@ function png(filename, height)
 {
   var scale = height / 512;
 
-  /* Append file */ files.png.push({name: filename + '_'+ height , height: height });
+  /* Append file */ html_data.png.push({name: filename + '_'+ height , height: height });
 
   /* Generate normal image */
     gulp.src(svg_dist+filename + '.svg')
@@ -202,7 +202,7 @@ function png(filename, height)
         .pipe(rename(filename + '_'+ height + '.png'))
         .pipe(gulp.dest(png_dist));
 
-    /* Append file */ files.png.push({name: filename + '_'+ height +'@2x', height: height });
+    /* Append file */ html_data.png.push({name: filename + '_'+ height +'@2x', height: height });
 
     /* Generate retina image */
     return gulp.src(svg_dist+filename + '.svg')
@@ -216,10 +216,10 @@ function png(filename, height)
 // TASK : default - Generate index.html
 // ---------------------------------------------------
 
-gulp.task('default', ['process-favicons'], function() {
+gulp.task('default', ['process-sprites'], function() {
 
   return gulp.src(index_template)
-  .pipe(template({ext:'.html', data: files}))
+  .pipe(template({ext:'.html', data: html_data}))
   .pipe(rename('index.html'))
   .pipe(gulp.dest(index_dist));
 

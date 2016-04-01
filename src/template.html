@@ -32,7 +32,7 @@
         <div class="ui attached fluid segment">
           <div class="ui images rounded bordered">
              {% for file in png %}
-             <img data-content="png/{{ file.name }}.png" data-variation="inverted" src="png/{{ file.name }}.png">
+             <a href="{{ gh_pages }}/png/{{ file.name }}.png"><img data-content="png/{{ file.name }}.png" data-variation="inverted" src="png/{{ file.name }}.png"></a>
              {% endfor %}
           </div>
         </div>
