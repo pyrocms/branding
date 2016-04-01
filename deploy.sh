@@ -9,8 +9,8 @@ BASEDIR=$(cd $(dirname $0) && pwd)
 ASSETSDIR="$BASEDIR/assets"
 
 # install npm and run gulp
-./npm install
-./gulp
+npm install
+gulp
 
 # Create a new Git repo in assets folder
 cd "$ASSETSDIR"
