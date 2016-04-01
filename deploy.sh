@@ -8,7 +8,7 @@ BASEDIR=$(cd $(dirname $0) && pwd)
 # Destination directory for built code
 ASSETSDIR="$BASEDIR/assets"
 
-# run the build script
+# install npm and run gulp
 ./npm install
 ./gulp
 
