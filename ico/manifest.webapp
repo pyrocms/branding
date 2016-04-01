@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "PyroCMS",
+  "description": "Built for everyone",
+  "icons": {
+    "60": "assets/ico/firefox_app_60x60.png",
+    "128": "assets/ico/firefox_app_128x128.png",
+    "512": "assets/ico/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Ryan Thompson",
+    "url": "https://github.com/RyanThompson"
+  }
+}

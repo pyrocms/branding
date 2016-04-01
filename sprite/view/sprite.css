@@ -1,0 +1,54 @@
+.svg-logo {
+	background: url("svg/sprite.view.svg") 61.14012184508268% 50% no-repeat;
+}
+
+.svg-logo-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-logo-full {
+	background: url("svg/sprite.view.svg") 83.42036553524804% 50% no-repeat;
+}
+
+.svg-logo-full-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-logo-inverted {
+	background: url("svg/sprite.view.svg") 0 100% no-repeat;
+}
+
+.svg-logo-inverted-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-logo-text {
+	background: url("svg/sprite.view.svg") 0 0 no-repeat;
+}
+
+.svg-logo-text-dims {
+	width: 1405px;
+	height: 512px;
+}
+
+.svg-logo-text-full {
+	background: url("svg/sprite.view.svg") 0 50% no-repeat;
+}
+
+.svg-logo-text-full-dims {
+	width: 1405px;
+	height: 512px;
+}
+
+.svg-logo-text-inverted {
+	background: url("svg/sprite.view.svg") 100% 0 no-repeat;
+}
+
+.svg-logo-text-inverted-dims {
+	width: 1405px;
+	height: 512px;
+}
+
