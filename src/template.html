@@ -49,7 +49,7 @@
         <div class="ui attached fluid segment">
           <div class="ui images rounded bordered">
             {% for filename in svg %}
-            <img  data-content="svg/{{ filename }}.svg" data-variation="inverted" src="svg/{{ filename }}.svg">
+            <a href="{{ gh_pages }}/svg/{{ filename }}.svg"><img  data-content="svg/{{ filename }}.svg" data-variation="inverted" src="svg/{{ filename }}.svg"></a>
             {% endfor %}
           </div>
         </div>
