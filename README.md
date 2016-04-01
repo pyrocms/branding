@@ -1,5 +1,6 @@
 # PyroCMS Branding
 
+[![Build Status](https://travis-ci.org/pyrocms/branding.svg?branch=master)](https://travis-ci.org/pyrocms/branding)
 
 This repository satisfies all logos needs of PyroCMS. It generates logos in SVG, PNG, ICO and SVG sprites formats from a single SVG template `src/template.svg`.
 
