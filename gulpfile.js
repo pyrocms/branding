@@ -11,7 +11,7 @@
  *
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Adnan M.Sagar, PhD. <adnan@websemantics.io>
+ * @author        Adnan M.Sagar, PhD. <adnan@websemantics.ca>
  */
 
 var gulp           = require("gulp");

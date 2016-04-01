@@ -18,7 +18,7 @@ git init
 
 # Set user details
 git config user.name "iAyeBot"
-git config user.email "iayebot@gmail.com"
+git config user.email "iayebot@websemantics.ca"
 
 # First commit, .. horray!
 git add .
