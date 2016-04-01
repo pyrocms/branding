@@ -23,6 +23,8 @@ var svg2png 	     = require("gulp-svg2png");
 var favicons       = require("gulp-favicons");
 
 var svg_template   = 'src/template.svg';
+var index_template = 'src/template.html';
+var index_dist 	   = 'assets/';
 var png_dist 	     = 'assets/png/';
 var svg_dist 	     = 'assets/svg/';
 var ico_dist 	     = 'assets/ico/';
@@ -30,6 +32,9 @@ var sprite_dist    = 'assets/sprite/';
 
 var white_fill     = '#ffffff';
 var brand_fill     = '#61269E';
+
+/* Preview index.html */
+var files          = {svg:[],png:[]};
 
 /*
 	List of all required PNG files and sizes for both, logo and logo+text
@@ -147,7 +152,7 @@ function svg(filename, data)
     data = JSON.parse(JSON.stringify(data)); /* clone */
 
     /* Oddly behaving scale factor, range 1 (full size) to 0.1, smallest )*/
-    var scale            = data['scale'] || 1;
+    var scale                = data['scale'] || 1;
 
     data['text_fill']        = data['text_fill'] || '';
     data['width']            = data['width'] || (data['show_text'] ? 1405 : 512);
@@ -166,6 +171,8 @@ function svg(filename, data)
     data['viewbox_y']        = data['viewbox_y'] - (1-scale) * data['height'] / 2;
     data['viewbox_width']    = data['width'] + data['width'] * (1-scale);
     data['viewbox_height']   = data['height'] + data['height'] * (1-scale);
+
+    /* Append file */ files.svg.push(filename);
 
   	return gulp.src(svg_template)
 		.pipe(template({ext:'.svg', data: data}))
@@ -187,25 +194,42 @@ function png(filename, height)
 {
   var scale = height / 512;
 
+  /* Append file */ files.png.push({name: filename + '_'+ height , height: height });
+
   /* Generate normal image */
     gulp.src(svg_dist+filename + '.svg')
         .pipe(svg2png([scale]))
         .pipe(rename(filename + '_'+ height + '.png'))
         .pipe(gulp.dest(png_dist));
 
+    /* Append file */ files.png.push({name: filename + '_'+ height +'@2x', height: height });
+
     /* Generate retina image */
     return gulp.src(svg_dist+filename + '.svg')
         .pipe(svg2png([scale * 2]))
-        .pipe(rename(filename + '_'+ height +'@2x.png'))
+        .pipe(rename(filename + '_' + height +'@2x.png'))
         .pipe(gulp.dest(png_dist));
 
 };
 
 // ---------------------------------------------------
-// TASK : default - process SVG sprites
+// TASK : default - Generate index.html
 // ---------------------------------------------------
 
 gulp.task('default', ['process-favicons'], function() {
+
+  return gulp.src(index_template)
+  .pipe(template({ext:'.html', data: files}))
+  .pipe(rename('index.html'))
+  .pipe(gulp.dest(index_dist));
+
+});
+
+// ---------------------------------------------------
+// TASK : process SVG sprites
+// ---------------------------------------------------
+
+gulp.task('process-sprites', ['process-favicons'], function() {
 
 	return gulp
 			.src(svg_dist+'*.svg')
